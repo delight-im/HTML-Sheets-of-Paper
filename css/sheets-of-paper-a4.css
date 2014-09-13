@@ -1,0 +1,29 @@
+@import "sheets-of-paper.css";
+
+.page {
+	/* Styles for better appearance on screens only -- are reset to defaults in print styles later */
+
+	/* Reflect the paper width in the screen rendering (must match size from @page rule) */
+	width: 21cm;
+	/* Reflect the paper height in the screen rendering (must match size from @page rule) */
+	min-height: 29.7cm;
+
+	/* Reflect the actual page margin/padding on paper in the screen rendering (must match margin from @page rule) */
+	padding-left: 2cm;
+	padding-top: 2cm;
+	padding-right: 2cm;
+	padding-bottom: 2cm;
+}
+/* Use CSS Paged Media to switch from continuous documents to sheet-like documents with separate pages */
+@page {
+	/* You can only change the size, margins, orphans, widows and page breaks here */
+
+	/* Paper size and page orientation */
+	size: A4 portrait;
+
+	/* Margin per single side of the page */
+	margin-left: 2cm;
+	margin-top: 2cm;
+	margin-right: 2cm;
+	margin-bottom: 2cm;
+}
