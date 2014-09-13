@@ -2,6 +2,8 @@
 
 Emulating real sheets of paper in web documents (using HTML and CSS)
 
+[**Live demo**](https://delight-im.github.io/HTML-Sheets-of-Paper/): Try printing the page
+
 ## Paper sizes
 
  * `A4` (21cm × 29.7cm) — `sheets-of-paper-a4.css`
