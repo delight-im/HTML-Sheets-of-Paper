@@ -2,7 +2,7 @@
 
 Emulating real sheets of paper in web documents (using HTML and CSS)
 
-[**Live demo**](https://delight-im.github.io/HTML-Sheets-of-Paper/): Try printing the page
+[**Live demo**](https://delight-im.github.io/HTML-Sheets-of-Paper/): Try modifying or printing the page
 
 ## Usage
 
