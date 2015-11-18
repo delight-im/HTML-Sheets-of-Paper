@@ -9,6 +9,15 @@ Emulating real sheets of paper in web documents (using HTML and CSS)
  1. Copy all files to any desired directory
  2. Modify the HTML source in [`index.html`](index.html) to your liking
 
+## Browser compatibility
+
+ * Chrome 4+
+ * Firefox 19+
+ * Safari 5+
+ * Opera 10.1+
+ * Internet Explorer 9+
+ * Edge 12+
+
 ## Paper sizes
 
  * `A4` (21cm × 29.7cm) — `sheets-of-paper-a4.css`
