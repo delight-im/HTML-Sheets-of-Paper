@@ -34,6 +34,8 @@ html, body {
 	background: #fff;
 	/* Show a drop shadow beneath each page */
 	box-shadow: 0 4px 5px rgba(75, 75, 75, 0.2);
+	/* Override outline from user agent stylesheets */
+	outline: 0;
 }
 /* Defines a class for manual page breaks via inserted .page-break element */
 div.page-break {
