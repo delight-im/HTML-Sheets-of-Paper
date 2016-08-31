@@ -39,10 +39,6 @@ Word processor in your browser using HTML and CSS (e.g. for invoices, legal noti
  * From the `Margins` list, choose `None` to prevent the browser from overriding our CSS.
  * In the `Options` section, uncheck `Headers and footers` and check `Background colors and images`.
 
-## Third-party components
-
- * Open Sans — Steve Matteson (via Google) — Apache License 2.0
-
 ## License
 
 ```

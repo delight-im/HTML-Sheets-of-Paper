@@ -3,8 +3,10 @@ html, body {
 	margin: 0;
 	/* Reset the document's padding values */
 	padding: 0;
-	/* Use a clean and well-readable base font */
-	font: 12pt 'Open Sans', 'Helvetica Neue', sans-serif;
+	/* Use the platform's native font as the default */
+	font-family: "Roboto", -apple-system, "San Francisco", "Segoe UI", "Helvetica Neue", sans-serif;
+	/* Define a reasonable base font size */
+	font-size: 12pt;
 
 	/* Styles for better appearance on screens only -- are reset to defaults in print styles later */
 
