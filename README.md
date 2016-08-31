@@ -4,8 +4,7 @@ Word processor in your browser using HTML and CSS (e.g. for invoices, legal noti
 
  * Poor man's Google Docs
  * Like the foundation of Microsoft Word or LibreOffice — but in your web browser
- * Emulates sheets of paper in web documents
- * No skeuomorphic paper
+ * Emulates sheets of paper in web documents (but without skeuomorphic paper textures)
 
 [**Live demo**](https://delight-im.github.io/HTML-Sheets-of-Paper/): Try modifying or printing the page
 
