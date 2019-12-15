@@ -13,7 +13,7 @@
 	width: 27.9cm;
 	/* Reflect the paper height in the screen rendering (must match size from @page rule) */
 	min-height: 43.2cm;
-
+	min-height: 43.2cm;
 	/* Reflect the actual page margin/padding on paper in the screen rendering (must match margin from @page rule) */
 	padding-left: 2cm;
 	padding-top: 2cm;
