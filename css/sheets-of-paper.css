@@ -41,6 +41,40 @@ html, body {
 div.page-break {
 	page-break-after: always;
 }
+/* Simulates the behavior of manual page breaks from `print` mode in `screen` mode */
+@media screen {
+	/* Renders the border and shadow at the bottom of the upper virtual page */
+	div.page-break::before {
+		content: "";
+		display: block;
+		/* Give a sufficient height to this element so that its drop shadow is properly rendered */
+		height: 0.8cm;
+		/* Offset the negative extra margin at the left of the non-pseudo element */
+		margin-left: 0.5cm;
+		/* Offset the negative extra margin at the right of the non-pseudo element */
+		margin-right: 0.5cm;
+		/* Make the bottom area appear as a part of the page margins of the upper virtual page */
+		background-color: #fff;
+		/* Show a drop shadow beneath the upper virtual page */
+		box-shadow: 0 6px 5px rgba(75, 75, 75, 0.2);
+	}
+	/* Renders the empty space as a divider between the two virtual pages that are actually two parts of the same page */
+	div.page-break {
+		display: block;
+		/* Assign the intended height plus the height of the pseudo element */
+		height: 1.8cm;
+		/* Apply a negative margin at the left to offset the page margins of the page plus some negative extra margin to paint over the border and shadow of the page */
+		margin-left: -2.5cm;
+		/* Apply a negative margin at the right to offset the page margins of the page plus some negative extra margin to paint over the border and shadow of the page */
+		margin-right: -2.5cm;
+		/* Create the bottom page margin on the upper virtual page (minus the height of the pseudo element) */
+		margin-top: 1.2cm;
+		/* Create the top page margin on the lower virtual page */
+		margin-bottom: 2cm;
+		/* Let this page appear as empty space between the virtual pages */
+		background: #eee;
+	}
+}
 /* For top-level headings only */
 h1 {
 	/* Force page breaks after */
