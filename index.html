@@ -32,6 +32,32 @@
 		</div>
 		<script type="text/javascript">
 		// window.print();
+
+		/* Applies any manual page breaks in preview mode (screen, non-print) where CSS Paged Media is not fully supported */
+		function applyManualPageBreaks() {
+			var docs, pages, snippets;
+			docs = document.querySelectorAll(".document");
+
+			for (var d = docs.length - 1; d >= 0; d--) {
+				pages = docs[d].querySelectorAll(".page");
+
+				for (var p = pages.length - 1; p >= 0; p--) {
+					snippets = pages[p].children;
+
+					for (var s = snippets.length - 1; s >= 0; s--) {
+						if (snippets[s].classList.contains("page-break")) {
+							pages[p].insertAdjacentHTML("afterend", "<div class=\"page\" contenteditable=\"true\"></div>");
+
+							for (var n = snippets.length - 1; n > s; n--) {
+								pages[p].nextElementSibling.insertBefore(snippets[n], pages[p].nextElementSibling.firstChild);
+							}
+
+							snippets[s].remove();
+						}
+					}
+				}
+			}
+		}
 		</script>
 	</body>
 </html>
