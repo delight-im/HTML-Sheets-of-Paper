@@ -45,6 +45,16 @@
 		function applyPageBreaks() {
 			applyManualPageBreaks();
 			applyAutomaticPageBreaks(Config.pixelsPerInch, Config.pageHeightInCentimeter, Config.pageMarginBottomInCentimeter);
+
+			document.querySelectorAll(".document .page").forEach(function (element) {
+				if (!element.classList.contains("has-events")) {
+					element.addEventListener("blur", function () {
+						applyPageBreaks();
+					});
+
+					element.classList.add("has-events");
+				}
+			});
 		}
 
 		/* Applies any manual page breaks in preview mode (screen, non-print) where CSS Paged Media is not fully supported */
