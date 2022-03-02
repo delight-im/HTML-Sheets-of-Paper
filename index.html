@@ -58,6 +58,37 @@
 				}
 			}
 		}
+
+		/* Applies (where necessary) automatic page breaks in preview mode (screen, non-print) where CSS Paged Media is not fully supported */
+		function applyAutomaticPageBreaks(pixelsPerInch, pageHeightInCentimeter, pageMarginBottomInCentimeter) {
+			var inchPerCentimeter = 0.393701;
+			var pageHeightInInch = pageHeightInCentimeter * inchPerCentimeter;
+			var pageHeightInPixels = Math.ceil(pageHeightInInch * pixelsPerInch);
+			var pageMarginBottomInInch = pageMarginBottomInCentimeter * inchPerCentimeter;
+			var pageMarginBottomInPixels = Math.ceil(pageMarginBottomInInch * pixelsPerInch);
+			var docs, pages, snippets, pageCoords, snippetCoords;
+			docs = document.querySelectorAll(".document");
+
+			for (var d = docs.length - 1; d >= 0; d--) {
+				pages = docs[d].querySelectorAll(".page");
+
+				for (var p = pages.length - 1; p >= 0; p--) {
+					if (pages[p].clientHeight > pageHeightInPixels) {
+						pages[p].insertAdjacentHTML("afterend", "<div class=\"page\" contenteditable=\"true\"></div>");
+						pageCoords = pages[p].getBoundingClientRect();
+						snippets = pages[p].querySelectorAll("h1, h2, h3, h4, h5, h6, p");
+
+						for (var s = snippets.length - 1; s >= 0; s--) {
+							snippetCoords = snippets[s].getBoundingClientRect();
+
+							if ((snippetCoords.bottom - pageCoords.top + pageMarginBottomInPixels) > pageHeightInPixels) {
+								pages[p].nextElementSibling.insertBefore(snippets[s], pages[p].nextElementSibling.firstChild);
+							}
+						}
+					}
+				}
+			}
+		}
 		</script>
 	</body>
 </html>
