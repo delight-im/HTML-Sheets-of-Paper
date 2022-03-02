@@ -33,6 +33,20 @@
 		<script type="text/javascript">
 		// window.print();
 
+		var Config = {};
+		Config.pixelsPerInch = 96;
+		Config.pageHeightInCentimeter = 29.7; // must match 'min-height' from 'css/sheets-of-paper-*.css' being used
+		Config.pageMarginBottomInCentimeter = 2; // must match 'padding-bottom' and 'margin-bottom' from 'css/sheets-of-paper-*.css' being used
+
+		window.addEventListener("DOMContentLoaded", function () {
+			applyPageBreaks();
+		});
+
+		function applyPageBreaks() {
+			applyManualPageBreaks();
+			applyAutomaticPageBreaks(Config.pixelsPerInch, Config.pageHeightInCentimeter, Config.pageMarginBottomInCentimeter);
+		}
+
 		/* Applies any manual page breaks in preview mode (screen, non-print) where CSS Paged Media is not fully supported */
 		function applyManualPageBreaks() {
 			var docs, pages, snippets;
