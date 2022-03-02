@@ -30,6 +30,13 @@ Word processor in your browser using HTML and CSS (e.g. for invoices, legal noti
  * `US Legal` (21.6cm × 35.6cm) — `sheets-of-paper-uslegal.css`
  * `US Tabloid` (27.9cm × 43.2cm) — `sheets-of-paper-ustabloid.css`
 
+### Landscape orientation
+
+ 1. In the `css/sheets-of-paper-*.css` variant that you’re using:
+    1. Swap the values of `width` and `min-height`
+    1. Set the second value of the `size` attribute to `landscape`
+ 1. In `index.html`, set `Config.pageHeightInCentimeter` to your new `min-height` value from above
+
 ## Printing
 
 ### Chrome
