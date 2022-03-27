@@ -100,7 +100,7 @@
 					if (pages[p].clientHeight > pageHeightInPixels) {
 						pages[p].insertAdjacentHTML("afterend", "<div class=\"page\" contenteditable=\"true\"></div>");
 						pageCoords = pages[p].getBoundingClientRect();
-						snippets = pages[p].querySelectorAll("h1, h2, h3, h4, h5, h6, p");
+						snippets = pages[p].querySelectorAll("h1, h2, h3, h4, h5, h6, p, ul, ol");
 
 						for (var s = snippets.length - 1; s >= 0; s--) {
 							snippetCoords = snippets[s].getBoundingClientRect();
