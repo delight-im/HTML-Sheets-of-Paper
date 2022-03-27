@@ -96,7 +96,7 @@
 			for (var d = docs.length - 1; d >= 0; d--) {
 				pages = docs[d].querySelectorAll(".page");
 
-				for (var p = pages.length - 1; p >= 0; p--) {
+				for (var p = 0; p < pages.length; p++) {
 					if (pages[p].clientHeight > pageHeightInPixels) {
 						pages[p].insertAdjacentHTML("afterend", "<div class=\"page\" contenteditable=\"true\"></div>");
 						pageCoords = pages[p].getBoundingClientRect();
@@ -109,6 +109,8 @@
 								pages[p].nextElementSibling.insertBefore(snippets[s], pages[p].nextElementSibling.firstChild);
 							}
 						}
+
+						pages = docs[d].querySelectorAll(".page");
 					}
 				}
 			}
